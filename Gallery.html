@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  <script type="text/javascript" src="js/jquery-1.6.js" ></script>
+  <script type="text/javascript" src="js/cufon-yui.js"></script>
+  <script type="text/javascript" src="js/cufon-replace.js"></script>
+  <script type="text/javascript" src="js/atooltip.jquery.js"></script>
+
+
+
+</head>
+
+<body id="page3">
+	<div class="bg1">
+		<div class="main">
+			<!--header -->
+			<header>
+				<nav>
+						<ul id="menu">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="About.html">Состав</a></li>
+						<li class="active"><a href="Gallery.html">Галерея</a></li>
+						<li><a href="Video.html">Видео</a></li>
+						<li><a href="Contacts.html">Контакты</a></li>
+						<li><a href="Audio.html">Аудио</a></li>
+					</ul>
+				</nav><a href="Gallery.html"><img src="images/logo.gif" alt="" id="logo"></a>
+	        </header>
+			<!--header end-->
+			<div class="box">
+			<!--content -->
+			<article id="content">
+				<div class="wrapper">
+					<h2>Галерея Artic Monkeys </h2>
+					<dl class="folio">
+						<dt>
+							<img src="images/gallery_big_img1.jpg" alt="Классные" id="img1" />
+							<img src="images/gallery_big_img2.jpg" alt="Пиздатые" id="img2" />
+							<img src="images/gallery_big_img3.jpg" alt="Офигенные" id="img3" />
+							<img src="images/gallery_big_img4.jpg" alt="Красивые" id="img4" />
+							<img src="images/gallery_big_img5.jpg" alt="Adorable" id="img5" />
+							<img src="images/gallery_big_img6.jpg" alt="Awesome" class="active" id="img6" />
+							<img src="images/gallery_big_img7.jpg" alt="Hot" id="img7" />
+							<img src="images/gallery_big_img8.jpg" alt="Top" id="img8" />
+							<img src="images/gallery_big_img9.jpg" alt="Няшки" id="img9" />
+						</dt>
+						<dd>
+							<ul class="marg_right1">
+								<li><a href="#img1"><img src="images/gallery_img1.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img2"><img src="images/gallery_img2.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img3"><img src="images/gallery_img3.jpg" alt="" width="260" height="171" /></a></li>
+							</ul>
+							<ul class="marg_right1">
+								<li><a href="#img4"><img src="images/gallery_img4.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img5"><img src="images/gallery_img5.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img6"><img src="images/gallery_img6.jpg" alt="" width="260" height="171" /></a></li>
+							</ul>
+							<ul>
+								<li><a href="#img7"><img src="images/gallery_img7.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img8"><img src="images/gallery_img8.jpg" alt="" width="260" height="171" /></a></li>
+								<li><a href="#img9"><img src="images/gallery_img9.jpg" alt="" width="260" height="171" /></a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</article>
+			<!--content end-->
+			<!--footer -->
+					<footer>
+				<div class="line1">
+					<div class="line2 wrapper">
+						<div class="icons">
+							<h4>Связаться с нами</h4>
+							<ul id="icons">
+								<li><a href="https://twitter.com/GoArticMonkeys" class="normaltip" title="Twitter"><img src="images/icon3.jpg" alt=""></a></li>
+								<li><a href="https://www.facebook.com/ArcticMonkeys/" class="normaltip" title="Facebook"><img src="images/icon4.jpg" alt=""></a></li>
+							</ul>
+							<!-- {%FOOTER_LINK} -->
+						</div>
+						<div class="info">
+							<h4>Разделы</h4>
+						<ul>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/index.html">Главная</a></li>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/About.html">Состав</a></li>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/Gallery.html">Галерея</a></li>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/Video.html">Видео</a></li>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/Contacts.html">Контакты</a></li>
+								<li><a href="file:///D:/%D0%B2%D0%B5%D0%B1/site/Audio.html">Аудио</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!--footer end-->
+			</div>
+		</div>
+	</div>
+<script>
+	Cufon.now();
+</script>
+<script>
+$(document).ready(function(){
+	var Img='#'+$(".folio .active").attr('id')
+	$(".folio dt img").css({opacity:'0'});
+	$(".folio dt img.active").css({opacity:'1'});
+	$(".folio ul li a").click(function(){
+  		var ImgId = $(this).attr("href");
+  		if (ImgId!=Img) {
+			$(".folio dt .active").animate({ opacity: "0" }, 600,function(){
+				 $(this).removeClass('active');
+			})
+				 $(ImgId).animate({ opacity: "1" }, 600).addClass('active');
+		}
+		Img=ImgId;
+  	  return false;
+   })
+});
+</script>
+</body>
+</html>
